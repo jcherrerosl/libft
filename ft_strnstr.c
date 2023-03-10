@@ -19,20 +19,23 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 	i = 0;
 	j = 0;
-	if (!needle)
+	if (needle == NULL)
 		return ((char *)haystack);
-	while (haystack[i])
+	while (haystack[i] && i < len)
 	{
-		while (haystack[i] == needle[j] && j < len)
-		{
-			if (j == len - 1)
-				return ((char *)(haystack + i - j));
-			i++;
-			j++;
-		}
+		if (ft_memcmp(haystack, needle, len) == 0)
+			return ((char *)(haystack + i - j))
 		i = i - j;
 		j = 0;
 		i++;
 	}
+	return (0);
+}
+
+#include <stdio.h>
+int	main(void)
+{
+	char *str = "Hola esto es una prueba";
+	printf("%s", ft_strnstr(str, "Hola", 6));
 	return (0);
 }
