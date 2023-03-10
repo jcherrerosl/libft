@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+#include "libft.h"
+
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
@@ -19,23 +21,20 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 	i = 0;
 	j = 0;
-	if (needle == NULL)
+	if (needle[0] == '\0')
 		return ((char *)haystack);
 	while (haystack[i] && i < len)
 	{
-		if (ft_memcmp(haystack, needle, len) == 0)
-			return ((char *)(haystack + i - j))
+		while (haystack[i] == needle[j] && i < len)
+		{
+			if (needle[j + 1] == '\0')
+				return ((char *)haystack + i - j);
+			i++;
+			j++;
+		}
 		i = i - j;
 		j = 0;
 		i++;
 	}
-	return (0);
-}
-
-#include <stdio.h>
-int	main(void)
-{
-	char *str = "Hola esto es una prueba";
-	printf("%s", ft_strnstr(str, "Hola", 6));
-	return (0);
+	return (NULL);
 }
