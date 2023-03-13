@@ -18,22 +18,32 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	char	*sub;
 	size_t	i;
-	size_t	start_index;
 
 	if (!s)
-		return (0);
-	if ((size_t)start > ft_strlen(s))
-		return ("");
-	sub = (char *)malloc((len + 1) * sizeof(char));
+		return (NULL);
+	if ((int)start == -1 || ft_strlen(s) < start)
+		len = 0;
+	if ((int)start != -1 && ft_strlen(s + start) < len)
+		len = ft_strlen(s + start);
+	if ((int)len != -1)
+		sub = (char *)malloc((len + 1) * sizeof(char));
+	else
+		sub = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (!sub)
-		return (0);
+		return (NULL);
 	i = 0;
-	start_index = (size_t)start;
-	while (i < len && s[start_index] != '\0')
+	while (i < len && s[start] != '\0')
 	{
-		sub[i] = s[i + start_index];
+		sub[i] = s[start + i];
 		i++;
 	}
 	sub[i] = '\0';
 	return (sub);
 }
+/*
+int	main(void)
+{
+	printf("%s", ft_substr("hola", 4294967295, 0));
+	free(ft_substr("hola", 4294967295, 0));
+	return(0);
+}*/
