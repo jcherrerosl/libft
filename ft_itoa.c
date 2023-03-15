@@ -27,43 +27,62 @@ static int	int_len(int n)
 	return (i);
 }
 
-char	*ft_itoa(int n)
+static char	*write_pos(int n)
 {
 	int		len;
 	char	*num;
-	int		neg;
 
 	len = int_len(n);
-	num = (char *)malloc(sizeof(char) * len);
+	num = (char *)malloc(len + 1);
 	if (!num)
 		return (NULL);
-	if (n == -2147483648)
-		num = ft_memcpy(num, "-2147483648", len);
-	else
+	num[len] = '\0';
+	len--;
+	if (n == 0)
+		num[0] = '0';
+	while (n > 0)
 	{
-		neg = 1;
-		if (n < 0)
-		{
-			neg = -1;
-			n = -n;
-		}
-		while (len > 0)
-		{
-			num[len - 1] = n % 10 + '0';
-			n /= 10;
-			len--;
-		}
-		if (neg == -1)
-			num = ft_strjoin("-", num);
+		num[len] = n % 10 + '0';
+		n /= 10;
+		len--;
 	}
 	return (num);
 }
 
+char	*ft_itoa(int n)
+{
+	char	*aux;
+	int		len;
+
+	len = int_len(n) + 1;
+	if (n == -2147483648)
+		len = 11;
+	aux = (char *)malloc(len + 1);
+	if (!aux)
+		return (NULL);
+	if (n == -2147483648)
+		ft_memcpy(aux, "-2147483648\0", len + 1);
+	else if (n < 0)
+	{
+		n = -n;
+		aux[0] = '-';
+		ft_memcpy(aux + 1, write_pos(n), len + 1);
+		free(write_pos(n));
+	}
+	else
+	{
+		free(aux);
+		return (write_pos(n));
+	}
+	return (aux);
+}
+/*
 #include <stdio.h>
 
 int	main(void)
-{
-	printf("%s\n", ft_itoa(-2147483648));
-	free(ft_itoa(-2147483648));
-	return (0);
+{  
+	char *res = ft_itoa(-10004);
+    printf("%s", res);
+    free(res);
 }
+*/
