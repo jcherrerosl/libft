@@ -33,6 +33,11 @@ static char	*write_pos(int n)
 	char	*num;
 
 	len = int_len(n);
+	if (n < 0)
+	{
+		len++;
+		n = -n;
+	}
 	num = (char *)malloc(len + 1);
 	if (!num)
 		return (NULL);
@@ -54,28 +59,19 @@ char	*ft_itoa(int n)
 	char	*aux;
 	int		len;
 
-	len = int_len(n) + 1;
+	len = int_len(n);
+	if (n < 0)
+		len++;
 	if (n == -2147483648)
-		len = 11;
-	aux = (char *)malloc(len + 1);
+		return (ft_strdup("-2147483648"));
+	aux = write_pos(n);
 	if (!aux)
 		return (NULL);
-	if (n == -2147483648)
-		ft_memcpy(aux, "-2147483648\0", len + 1);
-	else if (n < 0)
-	{
-		n = -n;
+	if (n < 0)
 		aux[0] = '-';
-		ft_memcpy(aux + 1, write_pos(n), len + 1);
-		free(write_pos(n));
-	}
-	else
-	{
-		free(aux);
-		return (write_pos(n));
-	}
 	return (aux);
 }
+
 /*
 #include <stdio.h>
 
