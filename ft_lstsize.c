@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juaherre <juaherre@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/20 12:43:54 by juaherre          #+#    #+#             */
-/*   Updated: 2023/03/20 12:44:06 by juaherre         ###   ########.fr       */
+/*   Created: 2023/03/20 17:11:36 by juaherre          #+#    #+#             */
+/*   Updated: 2023/03/20 17:11:37 by juaherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+int	ft_lstsize(t_list *list)
 {
-	char	mod;
+	int	i;
 
-	if (n == -2147483648)
+	i = 0;
+	while (list != NULL)
 	{
-		ft_putstr_fd("-2147483648", fd);
-		return ;
+		list = list->next;
+		i++;
 	}
-	if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		n *= -1;
-	}
-	if (n >= 10)
-	{
-		ft_putnbr_fd(n / 10, fd);
-	}
-	mod = (n % 10) + '0';
-	ft_putchar_fd(mod, fd);
+	return (i);
 }
