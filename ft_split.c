@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juaherre <juaherre@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: juaherre <juaherre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 11:00:04 by juaherre          #+#    #+#             */
-/*   Updated: 2023/03/16 11:00:06 by juaherre         ###   ########.fr       */
+/*   Updated: 2023/03/21 13:00:35 by juaherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,8 @@ char	**ft_split(char const *s, char c)
 
 int	main(void)
 {
-	char *s = "Hola,mundo,como,estas";
-	char **array = ft_split(s, ',');
+	char *s = "Hola wenas como andamios";
+	char **array = ft_split(s, ' ');
 
 	if (array == NULL)
 	{
