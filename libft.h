@@ -6,7 +6,7 @@
 /*   By: juaherre <juaherre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 12:43:31 by juaherre          #+#    #+#             */
-/*   Updated: 2023/03/21 13:40:11 by juaherre         ###   ########.fr       */
+/*   Updated: 2023/03/23 13:36:12 by juaherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,6 @@ void	ft_lstadd_front(t_list **list, t_list *new);
 int		ft_lstsize(t_list *list);
 t_list	*ft_lstlast(t_list *list);
 void	ft_lstadd_back(t_list **list, t_list *new);
+void	ft_lstdelone(t_list *list, void (*del)(void *));
 
 #endif
