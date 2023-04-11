@@ -6,7 +6,7 @@
 /*   By: juaherre <juaherre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 08:55:07 by juaherre          #+#    #+#             */
-/*   Updated: 2023/04/11 15:59:34 by juaherre         ###   ########.fr       */
+/*   Updated: 2023/04/11 16:07:54 by juaherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	while (lst)
 	{
 		aux = ft_lstnew(lst->content);
-		if (aux == NULL)
+		if (!aux)
 		{
-			ft_lstdelone(new, del);
+			ft_lstclear(&new, del);
 			return (NULL);
 		}
 		aux->content = f(aux->content);
