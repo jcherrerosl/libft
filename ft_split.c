@@ -6,7 +6,7 @@
 /*   By: juaherre <juaherre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 11:00:04 by juaherre          #+#    #+#             */
-/*   Updated: 2023/04/11 13:29:46 by juaherre         ###   ########.fr       */
+/*   Updated: 2023/03/21 13:00:35 by juaherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,19 +33,6 @@ static int	count_words(char const *s, char c)
 	return (count);
 }
 
-static void	free_split(char **array)
-{
-	int	i;
-
-	i = 0;
-	while (array[i])
-	{
-		free(array[i]);
-		i++;
-	}
-	free(array);
-}
-
 static char	*get_word(char const *s, char c)
 {
 	char	*word;
@@ -58,20 +45,24 @@ static char	*get_word(char const *s, char c)
 	return (word);
 }
 
-static int	fill_array(char const *s, char c, char **array)
+char	**ft_split(char const *s, char c)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
+	char	**array;
 
 	i = 0;
 	j = 0;
+	array = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (!array)
+		return (NULL);
 	while (s[i])
 	{
 		if (s[i] != c)
 		{
 			array[j] = get_word(s + i, c);
 			if (!array[j])
-				return (0);
+				return (NULL);
 			j++;
 			while (s[i] && s[i] != c)
 				i++;
@@ -80,20 +71,31 @@ static int	fill_array(char const *s, char c, char **array)
 			i++;
 	}
 	array[j] = NULL;
-	return (1);
-}
-
-char	**ft_split(char const *s, char c)
-{
-	char	**array;
-
-	array = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
-	if (!array)
-		return (NULL);
-	if (!fill_array(s, c, array))
-	{
-		free_split(array);
-		return (NULL);
-	}
 	return (array);
 }
+
+/*
+
+#include <stdio.h>
+
+int	main(void)
+{
+	char *s = "Hola wenas como andamios";
+	char **array = ft_split(s, ' ');
+
+	if (array == NULL)
+	{
+		printf("Error: no se pudo dividir la cadena.\n");
+		return (1);
+	}
+	int i = 0;
+	while (array[i] != NULL)
+	{
+		printf("%s\n", array[i]);
+		free(array[i]);
+		i++;
+	}
+	free(array);
+	return (0);
+}
+*/

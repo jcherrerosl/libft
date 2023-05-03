@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juaherre <juaherre@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: juaherre <juaherre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 11:29:50 by juaherre          #+#    #+#             */
-/*   Updated: 2023/03/07 11:29:52 by juaherre         ###   ########.fr       */
+/*   Updated: 2023/03/28 20:47:38 by juaherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

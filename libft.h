@@ -6,15 +6,15 @@
 /*   By: juaherre <juaherre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 12:43:31 by juaherre          #+#    #+#             */
-/*   Updated: 2023/04/11 12:39:27 by juaherre         ###   ########.fr       */
+/*   Updated: 2023/05/03 12:40:26 by juaherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <stddef.h>
-# include <stdlib.h>
-# include <unistd.h>
+# include <stddef.h> //para que se defina el tipo size_t
+# include <stdlib.h> //para el malloc y free
+# include <unistd.h> //para write
 
 typedef struct s_list
 {
@@ -64,6 +64,6 @@ void	ft_lstadd_back(t_list **list, t_list *new);
 void	ft_lstdelone(t_list *list, void (*del)(void *));
 void	ft_lstclear(t_list **list, void (*del)(void *));
 void	ft_lstiter(t_list *list, void (*f)(void *));
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list	*ft_lstmap(t_list *list, void (*f)(void *), void (*del)(void *));
 
 #endif

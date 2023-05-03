@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juaherre <juaherre@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: juaherre <juaherre@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 17:11:36 by juaherre          #+#    #+#             */
-/*   Updated: 2023/03/27 13:39:08 by juaherre         ###   ########.fr       */
+/*   Updated: 2023/03/20 17:11:37 by juaherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

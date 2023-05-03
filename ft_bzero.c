@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juaherre <juaherre@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: juaherre <juaherre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 11:14:37 by juaherre          #+#    #+#             */
-/*   Updated: 2023/03/08 11:14:39 by juaherre         ###   ########.fr       */
+/*   Updated: 2023/05/03 12:33:23 by juaherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
