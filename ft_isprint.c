@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juaherre <juaherre@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: juaherre <juaherre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 11:59:51 by juaherre          #+#    #+#             */
-/*   Updated: 2023/03/07 11:59:53 by juaherre         ###   ########.fr       */
+/*   Updated: 2023/05/05 13:28:42 by juaherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juaherre <juaherre@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: juaherre <juaherre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 12:43:42 by juaherre          #+#    #+#             */
-/*   Updated: 2023/03/20 12:43:44 by juaherre         ###   ########.fr       */
+/*   Updated: 2023/05/05 13:32:55 by juaherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

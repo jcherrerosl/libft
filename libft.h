@@ -6,22 +6,22 @@
 /*   By: juaherre <juaherre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 12:43:31 by juaherre          #+#    #+#             */
-/*   Updated: 2023/05/03 12:40:26 by juaherre         ###   ########.fr       */
+/*   Updated: 2023/05/05 13:36:39 by juaherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <stddef.h> //para que se defina el tipo size_t
-# include <stdlib.h> //para el malloc y free
-# include <unistd.h> //para write
+# include <stddef.h> //importa la definición de size_t
+# include <stdlib.h> //importa el malloc y free
+# include <unistd.h> //importa el write
 
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }	t_list;
-
+/*Funciones obligatorias*/
 void	*ft_memset(void *b, int c, size_t size);
 void	*ft_memmove(void *dest, const void *src, size_t len);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
@@ -56,6 +56,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+/*Funciones del Bonus*/
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **list, t_list *new);
 int		ft_lstsize(t_list *list);
@@ -64,6 +65,6 @@ void	ft_lstadd_back(t_list **list, t_list *new);
 void	ft_lstdelone(t_list *list, void (*del)(void *));
 void	ft_lstclear(t_list **list, void (*del)(void *));
 void	ft_lstiter(t_list *list, void (*f)(void *));
-t_list	*ft_lstmap(t_list *list, void *(*f)(void *), void (*del)(void *));
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif

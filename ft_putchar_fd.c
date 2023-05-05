@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juaherre <juaherre@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: juaherre <juaherre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 12:43:18 by juaherre          #+#    #+#             */
-/*   Updated: 2023/03/20 12:43:20 by juaherre         ###   ########.fr       */
+/*   Updated: 2023/05/05 13:38:56 by juaherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

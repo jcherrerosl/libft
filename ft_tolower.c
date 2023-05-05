@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juaherre <juaherre@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: juaherre <juaherre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 15:40:31 by juaherre          #+#    #+#             */
-/*   Updated: 2023/03/08 15:40:33 by juaherre         ###   ########.fr       */
+/*   Updated: 2023/05/05 13:34:38 by juaherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

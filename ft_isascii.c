@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juaherre <juaherre@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: juaherre <juaherre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 11:57:14 by juaherre          #+#    #+#             */
-/*   Updated: 2023/03/07 11:57:16 by juaherre         ###   ########.fr       */
+/*   Updated: 2023/05/05 13:28:33 by juaherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
