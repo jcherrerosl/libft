@@ -17,7 +17,7 @@ int    main(void)
 //    printf("%d\n", ft_strlen("hallojshaaiojsdiasjdhndiasjdndaisjdhndaisjdnasidjasidjnasd"));
 //    printf("%s\n", ft_strncpy(str, "hallokasjodijhsdoi", 5));
     strcpy(str, "hello");
-    printf("%s\n", ft_strncat(str, " byebye", 2));
+    printf("%d\n", ft_strlcat(str, "byebye", 20));
 
     free(str);
     return (0);
