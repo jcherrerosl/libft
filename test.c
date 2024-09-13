@@ -6,7 +6,7 @@ int    main(void)
     char    *str;
     const char    *src;
 //   src = malloc(sizeof(char) * 10);
-    str = malloc(sizeof(char) * 16);
+    str = (char *)malloc(sizeof(char) * 16);
 //    printf("%s\n", ft_memset(str, 65, 5));
 //    printf("%s\n", ft_memcpy(str, src, 5));
 //    printf("%s\n", ft_memccpy(str, src, 65 ,5));
