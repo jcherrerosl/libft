@@ -20,7 +20,7 @@ int    main(void)
 //    printf("%d\n", ft_strlcat(str, "byebye", 20));
 //    printf("%s\n", ft_strchr("Hola amigos", 'a'));
 //    printf("%s\n", ft_strrchr("Hola amigos", 'a'));
-    printf("%s\n", ft_strstr("shjdasihdquesaosakadsquesoasokasd", "queso"));
+    printf("%s\n", ft_strnstr("shjdasihdquesaosakadsquesoasokasd", "queso", 4));
 
 
 
