@@ -18,8 +18,9 @@ int    main(void)
 //    printf("%s\n", ft_strncpy(str, "hallokasjodijhsdoi", 5));
 //    strcpy(str, "hello");
 //    printf("%d\n", ft_strlcat(str, "byebye", 20));
-    printf("%s\n", ft_strchr("Hola amigos", 'a'));
-    printf("%s\n", ft_strrchr("Hola amigos", 'a'));
+//    printf("%s\n", ft_strchr("Hola amigos", 'a'));
+//    printf("%s\n", ft_strrchr("Hola amigos", 'a'));
+    printf("%s\n", ft_strstr("shjdasihdquesaosakadsquesoasokasd", "queso"));
 
 
 
