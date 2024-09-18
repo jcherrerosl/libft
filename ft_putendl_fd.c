@@ -1,46 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/17 14:35:16 by juanherr          #+#    #+#             */
-/*   Updated: 2024/09/18 16:45:50 by juanherr         ###   ########.fr       */
+/*   Created: 2024/09/18 17:52:21 by juanherr          #+#    #+#             */
+/*   Updated: 2024/09/18 17:53:36 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+void	ft_putendl_fd(char *s, int fd)
 {
-	size_t	i;
-	char	*str;
-
-	i = 0;
-	str = (char *)malloc(ft_strlen(s) + 1);
-	while (s[i])
-	{
-		str[i] = s[i];
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }
-/*
-char	*ft_strndup(const char *s, size_t n)
-{
-	size_t	i;
-	char	*str;
-
-	 i = 0;
-	str = (char *)malloc(n + 1);
-	while (s[i] && i < n)
-	{
-		str[i] = s[i];
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
-}
-*/

@@ -1,46 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/17 14:35:16 by juanherr          #+#    #+#             */
-/*   Updated: 2024/09/18 16:45:50 by juanherr         ###   ########.fr       */
+/*   Created: 2024/09/18 17:34:39 by juanherr          #+#    #+#             */
+/*   Updated: 2024/09/18 17:41:57 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	size_t	i;
-	char	*str;
+	unsigned int	i;
 
-	i = 0;
-	str = (char *)malloc(ft_strlen(s) + 1);
-	while (s[i])
+	if (s && f)
 	{
-		str[i] = s[i];
-		i++;
+		i = 0;
+		while (s[i])
+		{
+			f(i, &s[i]);
+			i++;
+		}
 	}
-	str[i] = '\0';
-	return (str);
 }
-/*
-char	*ft_strndup(const char *s, size_t n)
-{
-	size_t	i;
-	char	*str;
-
-	 i = 0;
-	str = (char *)malloc(n + 1);
-	while (s[i] && i < n)
-	{
-		str[i] = s[i];
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
-}
-*/
