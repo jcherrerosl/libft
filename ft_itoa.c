@@ -6,7 +6,7 @@
 /*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 15:19:41 by juanherr          #+#    #+#             */
-/*   Updated: 2024/09/18 16:59:32 by juanherr         ###   ########.fr       */
+/*   Updated: 2024/09/18 20:07:50 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,3 @@ char	*ft_itoa(int n)
 	return (num);
 }
 
-int	main(void)
-{
-	printf("%s\n", ft_itoa(-245));
-	return (0);
-}
