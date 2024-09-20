@@ -6,7 +6,7 @@
 /*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 16:24:03 by juanherr          #+#    #+#             */
-/*   Updated: 2024/09/19 12:13:39 by juanherr         ###   ########.fr       */
+/*   Updated: 2024/09/20 16:07:45 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,18 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	size_t	strlen;
 
-	sub = (char *)malloc(len + 1);
-	if (!sub || !s)
+	if (!s)
 		return (NULL);
-	i = 0;
 	strlen = ft_strlen(s);
-	while (s[start + i] && i < len && start < strlen)
+	i = 0;
+	if (start >= strlen)
+		return (ft_strdup(""));
+	if (len > strlen - start)
+		len = strlen - start;
+	sub = (char *)malloc(len + 1);
+	if (!sub)
+		return (NULL);
+	while (i < len)
 	{
 		sub[i] = s[start + i];
 		i++;

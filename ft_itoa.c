@@ -6,13 +6,11 @@
 /*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 15:19:41 by juanherr          #+#    #+#             */
-/*   Updated: 2024/09/18 20:07:50 by juanherr         ###   ########.fr       */
+/*   Updated: 2024/09/19 18:18:35 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <limits.h>
-#include <stdio.h>
 
 int	len_num(int n)
 {
@@ -57,4 +55,3 @@ char	*ft_itoa(int n)
 		num[0] = '-';
 	return (num);
 }
-

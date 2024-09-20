@@ -6,7 +6,7 @@
 /*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 20:24:46 by juanherr          #+#    #+#             */
-/*   Updated: 2024/09/19 13:50:55 by juanherr         ###   ########.fr       */
+/*   Updated: 2024/09/20 16:55:15 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static char	*ft_strndup(const char *s, size_t n)
 	char	*dup;
 
 	i = 0;
-	dup = (char *)malloc(ft_strlen(s) * sizeof(char) + 1);
+	dup = (char *)malloc(n * sizeof(char) + 1);
 	if (!dup)
 		return (NULL);
 	while (s[i] && i < n)
@@ -26,7 +26,7 @@ static char	*ft_strndup(const char *s, size_t n)
 		dup[i] = s[i];
 		i++;
 	}
-	dup[i] = s[i];
+	dup[i] = '\0';
 	return (dup);
 }
 
@@ -55,65 +55,71 @@ static size_t	count_words(const char *s, char c)
 	return (count);
 }
 
-void	split_process(char **matrix, const char *s, char c)
+static char	**free_matrix(char **matrix, size_t j)
+{
+	while (j > 0)
+	{
+		free(matrix[j]);
+		j--;
+	}
+	free(matrix);
+	return (NULL);
+}
+
+static char	**split_process(char **matrix, const char *s, char c)
 {
 	size_t	i;
-	size_t	j;
 	size_t	start;
+	size_t	j;
 
 	i = 0;
 	j = 0;
-	start = 0;
-	while (s[i])
+	while (j < count_words(s, c))
 	{
-		if (s[i] == c)
+		while (s[i] && s[i] == c)
+			i++;
+		start = i;
+		while (s[i] && s[i] != c)
+			i++;
+		if (i > start)
 		{
-			if (start < i)
-			{
-				matrix[j] = ft_strndup(s + start, i - start - 1);
-				j++;
-			}
-			start = i + 1;
+			matrix[j] = ft_strndup(s + start, i - start);
+			if (!matrix[j])
+				return (free_matrix(matrix, j));
+			j++;
 		}
-		i++;
 	}
-	if (start < i)
-		matrix[j] = ft_strndup(s + start, i - start);
 	matrix[j] = NULL;
+	return (matrix);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**matrix;
-	size_t	i;
-	size_t	j;
-	size_t	start;
 
+	if (!s)
+		return (NULL);
 	matrix = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
 	if (!matrix)
 		return (NULL);
-	i = 0;
-	j = 0;
-	start = 0;
-	split_process(matrix, s, c);
-	return (matrix);
+	return (split_process(matrix, s, c));
 }
 
-#include <stdio.h>
+//#include <stdio.h>
 
-int	main(void)
-{
-	char	*str;
-	int		i;
+//int	main(void)
+//{
+//	char	*str;
+//	int		i;
+//	int		c;
 
-	str = "";
-	i = 0;
-	while (ft_split(str, ' ')[i] != NULL)
-	{
-		printf(">%s<", ft_split(str, ' ')[i]);
-		i++;
-	}
-
-	//printf("%zu",count_words(str, ' '));
-	return (0);
-}
+//	str = "hello!";
+//	i = 0;
+//	c = 32;
+//	while (ft_split(str, c)[i] != NULL)
+//	{
+//		printf(">%s<\n", ft_split(str, c)[i]);
+//		i++;
+//	}
+//	return (0);
+//}
