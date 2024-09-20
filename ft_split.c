@@ -6,7 +6,7 @@
 /*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 20:24:46 by juanherr          #+#    #+#             */
-/*   Updated: 2024/09/20 16:55:15 by juanherr         ###   ########.fr       */
+/*   Updated: 2024/09/20 20:51:05 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static char	*ft_strndup(const char *s, size_t n)
 	char	*dup;
 
 	i = 0;
-	dup = (char *)malloc(n * sizeof(char) + 1);
+	dup = (char *)malloc((n + 1) * sizeof(char));
 	if (!dup)
 		return (NULL);
 	while (s[i] && i < n)
@@ -59,7 +59,7 @@ static char	**free_matrix(char **matrix, size_t j)
 {
 	while (j > 0)
 	{
-		free(matrix[j]);
+		free(matrix[j - 1]);
 		j--;
 	}
 	free(matrix);
