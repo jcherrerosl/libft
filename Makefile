@@ -27,8 +27,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
-bonus: $(OBJS) $(BONUSOBJS)
-	$(AR) $(NAME) $(OBJS) $(BONUSOBJS)
+bonus: $(NAME) $(BONUSOBJS)
+	$(AR) $(NAME) $(BONUSOBJS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -43,4 +43,4 @@ re: fclean all
 
 rebonus: fclean bonus
 
-.PHONY: all clean fclean re rebonus
+.PHONY: all clean fclean re rebonus bonus
