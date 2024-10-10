@@ -10,9 +10,5 @@ Este proyecto consiste en la creación de una librería personalizada en C para 
 This project consists of creating a personalized C library to assist with string, number, and memory manipulation.
 
 
-### Requisitos del sistema
-- gcc
-- make
-
 ### Autor
 Juan Carlos Herreros 
